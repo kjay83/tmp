@@ -1,2 +1,2 @@
 # tmp
-refresh tmp repo for python revision
+refresh tmp repo for python revision test
