@@ -1,6 +1,6 @@
 from flask import Flask, request
 from flask.json import jsonify
-from flask_restful import Api, Resource, reqparse
+from flask_restful import Api, Resource, abort, reqparse
 
 app = Flask(__name__)
 api = Api(app)
@@ -12,20 +12,35 @@ videos = {
     12:{"name":"toto12", "likes":12, "views":12000}
     }
 
+def abort_if_video_id_doesnt_exist(video_id):
+    if video_id not in videos:
+        abort(404,message="Video id not valid")
+
 video_put_args = reqparse.RequestParser()
 video_put_args.add_argument("name",type=str, help="Name of the video", required=True)
-video_put_args.add_argument("views",type=int, help="Views of the video")
-video_put_args.add_argument("likes",type=int, help="Likes of the video")
+video_put_args.add_argument("views",type=int, help="Views of the video", required=True)
+video_put_args.add_argument("likes",type=int, help="Likes of the video", required=True)
 
 
 class Video(Resource):
     def get(self, video_id):
+        abort_if_video_id_doesnt_exist(video_id)
         return videos[video_id]
     
     def post(self, video_id):
         args = video_put_args.parse_args()
         videos[video_id] = args
         return videos[video_id], 201
+    
+    def put(self, video_id):
+        abort_if_video_id_doesnt_exist(video_id)
+        args = video_put_args.parse_args()
+        videos[video_id] = args
+        return videos[video_id], 200
+    
+    def update_dictio(args, video_id):
+        videos[video_id] = args
+        return True
 
 api.add_resource(Video,"/videos/<int:video_id>")
 

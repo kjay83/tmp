@@ -1,11 +1,16 @@
 import requests
 
 BASE = "http://127.0.0.1:5000/"
-
-response = requests.post(BASE+"videos/111",{"likes":25,"erer":800, "name":"Yuna"})
+uri="videos/222"
+url = BASE + uri
+response = requests.put(url,{"name":"Yuna4","likes":2150,"erer":800,"views":58 })
 # print("videos test : "+str(response.json()))
 print("in test.py")
 print(response.json())
+# input()
+# response = requests.get(url)
+# print(response.json())
+
 
 # response = requests.get(BASE + "pple/timora")
 # print("pple test get : "+str(response.json()))
