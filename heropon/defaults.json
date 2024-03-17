@@ -1,0 +1,7 @@
+{
+    "MAX_HEALTH" : 100,
+    "DEFAULT_NAME" : "HEROPON",
+    "DEFAULT_DAMAGE" : 1,
+    "DEFAULT_HERO_DAMAGE" : 40
+}
+
