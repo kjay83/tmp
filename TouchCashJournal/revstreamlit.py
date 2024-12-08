@@ -3,15 +3,26 @@ import pandas as pd
 import numpy as np
 import sys
 import path
+import os
 
-dir = path.Path(__file__).abspath()
-sys.path.append(dir.parent.parent)
+def file_selector(folder_path='.'):
+    filenames = os.listdir(folder_path)
+    selected_filename = st.selectbox('Select a file', filenames)
+    return os.path.join(folder_path, selected_filename)
+
+
 
 def himan():
     st.write('##TOUCH APP V0.2')
 
     st.write('TOUCH APP')
     st.write('## TOUCH APP')
+
+    filename = file_selector()
+    st.write('You selected `%s`' % filename)
+
+    dir = path.Path(__file__).abspath()
+    sys.path.append(dir.parent.parent)
 
     filepath="https://github.com/kjay83/tmp/blob/main/TouchCashJournal/imdb_top_1000.csv"
     filepath2="./imdb_top_1000.csv"
