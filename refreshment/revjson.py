@@ -28,7 +28,8 @@ if __name__ == "__main__":
     # "id": 1,
     # "title": "delectus aut autem",
     # "completed": false
-    # }
+    # }...
+    # finding the completed todos and counting them by user
     filtre={}
     for todo in todos:
         if todo['completed']:
@@ -40,13 +41,12 @@ if __name__ == "__main__":
             print(f"Todo N° {todo["id"]} COMPLETED by userID {todo["userId"]}, it is his {filtre.get(todo["userId"])} success!")
     
     print(f"results are: {filtre}")
+
+    # parsing to find the one(s) with the max completed todos
     max=0
     for user,nb in filtre.items():
         if max < nb:
             max=nb
     bestUser=[user for user,nb in filtre.items() if max==nb]
-    # for user,nb in filtre.items():
-    #     if max == nb:
-    #         bestUser.append(user)
     print(f"Le(s) meilleur(s) user(s) est(sont) {bestUser} avec {max} task(s) completed!!")
     
