@@ -21,10 +21,7 @@ def himan():
     filename = file_selector()
     st.write('You selected `%s`' % filename)
 
-    #dir = path.Path(__file__).abspath()
-    #sys.path.append(dir.parent.parent)
-
-    filepath="https://github.com/kjay83/tmp/blob/main/TouchCashJournal/imdb_top_1000.csv"
+    #filepath="https://github.com/kjay83/tmp/blob/main/TouchCashJournal/imdb_top_1000.csv"
     filepath2="./TouchCashJournal/imdb_top_1000.csv"
     data = pd.read_csv(filepath2)
     st.write(data)
@@ -32,7 +29,7 @@ def himan():
     data2 = pd.read_csv("operations_journal.json",delimiter=";")
     st.write(data2)
 
-    data3 = pd.read_csv("netflix_titles_nov_2019.csv")
+    data3 = pd.read_csv("./TouchCashJournal/netflix_titles_nov_2019.csv")
     st.write(data3)
 
     st.write("## His Cool Chart")
