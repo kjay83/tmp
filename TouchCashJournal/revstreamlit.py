@@ -26,7 +26,7 @@ def himan():
     data = pd.read_csv(filepath2)
     st.write(data)
 
-    data2 = pd.read_csv("operations_journal.json",delimiter=";")
+    data2 = pd.read_csv("./TouchCashJournal/operations_journal.json",delimiter=";")
     st.write(data2)
 
     data3 = pd.read_csv("./TouchCashJournal/netflix_titles_nov_2019.csv")
