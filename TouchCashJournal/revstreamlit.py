@@ -3,12 +3,12 @@ import pandas as pd
 import numpy as np
 
 def himan():
-    st.write('##TOUCH APP')
+    st.write('##TOUCH APP V0.2')
 
     st.write('TOUCH APP')
     st.write('## TOUCH APP')
 
-    data = pd.read_csv("imdb_top_1000.csv")
+    data = pd.read_csv("./imdb_top_1000.csv")
     st.write(data)
 
     data2 = pd.read_csv("operations_journal.json",delimiter=";")

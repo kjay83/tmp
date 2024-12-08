@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import math
 
-st.title("Morgage Repayments Calculator TUTO")
+st.title("Morgage Repayments Calculator TUTO V2.0 241208")
 
 st.write("## Input Data")
 col1, col2 = st.columns(2)
