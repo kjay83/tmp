@@ -5,7 +5,7 @@ import sys
 import path
 
 dir = path.Path(__file__).abspath()
-sys.append.path(dir.parent.parent)
+sys.path.append(dir.parent.parent)
 
 def himan():
     st.write('##TOUCH APP V0.2')
@@ -14,7 +14,8 @@ def himan():
     st.write('## TOUCH APP')
 
     filepath="https://github.com/kjay83/tmp/blob/main/TouchCashJournal/imdb_top_1000.csv"
-    data = pd.read_csv(filepath)
+    filepath2="./imdb_top_1000.csv"
+    data = pd.read_csv(filepath2)
     st.write(data)
 
     data2 = pd.read_csv("operations_journal.json",delimiter=";")
