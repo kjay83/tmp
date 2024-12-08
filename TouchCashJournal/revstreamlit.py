@@ -18,6 +18,7 @@ def himan():
     st.write('TOUCH APP')
     st.write('## TOUCH APP')
 
+    #small snippet used to check file path
     filename = file_selector()
     st.write('You selected `%s`' % filename)
 
