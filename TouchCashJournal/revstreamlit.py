@@ -1,6 +1,11 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import sys
+import path
+
+dir = path.Path(__file__).abspath()
+sys.append.path(dir.parent.parent)
 
 def himan():
     st.write('##TOUCH APP V0.2')
