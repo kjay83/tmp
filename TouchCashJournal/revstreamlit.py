@@ -25,7 +25,7 @@ def himan():
     sys.path.append(dir.parent.parent)
 
     filepath="https://github.com/kjay83/tmp/blob/main/TouchCashJournal/imdb_top_1000.csv"
-    filepath2="./imdb_top_1000.csv"
+    filepath2="./TouchCashJournal/imdb_top_1000.csv"
     data = pd.read_csv(filepath2)
     st.write(data)
 
