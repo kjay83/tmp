@@ -21,8 +21,8 @@ def himan():
     filename = file_selector()
     st.write('You selected `%s`' % filename)
 
-    dir = path.Path(__file__).abspath()
-    sys.path.append(dir.parent.parent)
+    #dir = path.Path(__file__).abspath()
+    #sys.path.append(dir.parent.parent)
 
     filepath="https://github.com/kjay83/tmp/blob/main/TouchCashJournal/imdb_top_1000.csv"
     filepath2="./TouchCashJournal/imdb_top_1000.csv"
